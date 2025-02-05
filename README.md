@@ -14,11 +14,11 @@ This package offers a collection of tools for fitting the discrete power-law mod
 
 - [x] Set up the package structure  
 - [x] Write functions  
-- [x] Document functions with roxygen2  
-- [x] Implement examples in the package
-- [x] Check documentation
-- [x] Distribute GitHub  
-- [ ] Complete the Example section in GitHub
+- [x] Document functions
+- [x] Write examples for each function in the package
+- [x] Check the documentation
+- [x] Publish on GitHub  
+- [ ] Complete the "Example" section on GitHub
 - [ ] Distribute on CRAN
 
 ## Installation
