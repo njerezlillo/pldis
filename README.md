@@ -40,7 +40,7 @@ library(pldis)
 
 ## Citation
 
-To cite `pwpldis` package in publications, please use the following format:
+To cite `pldis` package in publications, please use the following format:
 
 Jerez-Lillo N (2025). *pldis: Fitting Discrete Power-Law Model*. R package version 1.0.0, [https://github.com/njerezlillo/pldis](https://github.com/njerezlillo/pldis).
 
