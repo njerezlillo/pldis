@@ -12,7 +12,7 @@ This package offers a collection of tools for fitting the discrete power-law mod
 
 ## Installation
 
-You can install the package using:
+You can install the package using :
 
 ``` r
 # install.packages("devtools")
