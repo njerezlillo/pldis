@@ -10,15 +10,6 @@
 
 This package offers a collection of tools for fitting the discrete power-law model, utilizing both frequentist and Bayesian approaches for parameter estimation and model evaluation.
 
-## Installation
-
-You can install the package using :
-
-``` r
-# install.packages("devtools")
-devtools::install_github("njerezlillo/pldis")
-```
-
 ## Progress status
 
 - [x] Set up the package structure  
@@ -28,14 +19,23 @@ devtools::install_github("njerezlillo/pldis")
 - [x] Check documentation
 - [x] Distribute GitHub  
 - [ ] Complete the Example section in GitHub
-- [ ] Distribute on CRAN  
+- [ ] Distribute on CRAN
+
+## Installation
+
+You can install the package using :
+
+``` r
+# install.packages("devtools")
+devtools::install_github("njerezlillo/pldis")
+```
 
 ## Example
 
 This is a basic example which shows you how to solve a common problem:
 
 ``` r
-library(pwpldis)
+library(pldis)
 ## basic example code
 ```
 
