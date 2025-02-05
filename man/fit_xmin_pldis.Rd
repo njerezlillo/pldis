@@ -57,23 +57,23 @@ x <- c(1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 4, 4, 10)
 
 # Estimation of xmin using the fit_xmin_pldis function:
 # First, we estimate xmin using the frequentist approach (bayesian = F)
-fit_xmin_pldis(x, bayesian = F)
+fit_xmin_pldis(x, bayesian = FALSE)
 # Then, we estimate xmin using the Bayesian approach (bayesian = T)
-fit_xmin_pldis(x, bayesian = T)
+fit_xmin_pldis(x, bayesian = TRUE)
 
 # Estimation of the full discrete power-law model parameters using fit_pldis:
 # First, we fix xmin to 1 and use the frequentist approach to estimate
 # alpha (bayesian = F)
-fit_pldis(x, xm = 1, bayesian = F)
+fit_pldis(x, xm = 1, bayesian = FALSE)
 # Next, we fix xmin to 1 and use the Bayesian approach to estimate
 # both alpha and xmin (bayesian = T)
-fit_pldis(x, xm = 1, bayesian = T)
+fit_pldis(x, xm = 1, bayesian = TRUE)
 
 # If no xmin value is provided, the function will automatically estimate xmin:
 # Estimation of the full discrete power-law model with the frequentist approach
-fit_pldis(x, bayesian = F)
+fit_pldis(x, bayesian = FALSE)
 # Estimation with the Bayesian approach
-fit_pldis(x, bayesian = T)
+fit_pldis(x, bayesian = TRUE)
 
 }
 \references{

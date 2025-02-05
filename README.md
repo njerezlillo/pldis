@@ -2,10 +2,10 @@
 # pldis Package
 
 <!-- badges: start -->
+[![R-CMD-check](https://github.com/njerezlillo/pldis/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/njerezlillo/pldis/actions/workflows/R-CMD-check.yaml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
 ![Lifecycle: experimental](https://img.shields.io/badge/Lifecycle-Experimental-orange)
-![Functions](https://img.shields.io/badge/Functions-13-lightblue)
-[![R-CMD-check](https://github.com/njerezlillo/pldis/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/njerezlillo/pldis/actions/workflows/R-CMD-check.yaml)
+![Functions](https://img.shields.io/badge/Functions-6-lightblue)
 <!-- badges: end -->
 
 This package offers a collection of tools for fitting the discrete power-law model, utilizing both frequentist and Bayesian approaches for parameter estimation and model evaluation.
