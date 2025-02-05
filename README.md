@@ -19,10 +19,16 @@ You can install the package using :
 devtools::install_github("njerezlillo/pldis")
 ```
 
-## Estado de avance
+## Progress status
 
-- [x] Tarea completada
-- [ ] Tarea pendiente
+- [x] Set up the package structure  
+- [x] Write functions  
+- [x] Document functions with roxygen2  
+- [x] Implement examples in the package
+- [x] Check documentation
+- [x] Distribute GitHub  
+- [ ] Complete the Example section in GitHub
+- [ ] Distribute on CRAN  
 
 ## Example
 
