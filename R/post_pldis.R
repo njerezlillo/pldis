@@ -1,0 +1,48 @@
+#' Posterior Distribution of the Discrete Power-Law Model
+#'
+#' Computes the posterior distribution for a discrete power-law model
+#' using Jeffreys prior as the noninformative prior.
+#'
+#' @param alpha A numeric value representing the scaling parameter \eqn{\alpha},
+#' which must be greater than 1.
+#' @param xmin A numeric value specifying the lower bound \eqn{x_{\min}}.
+#' @param x A numeric vector of observed data values.
+#'
+#' @details
+#' The posterior distribution is obtained by combining the likelihood function
+#' of the discrete power-law model with Jeffreys prior for \eqn{\alpha}.
+#' Given a dataset \eqn{x} and a scaling parameter \eqn{\alpha}, the posterior
+#' is proportional to:
+#' \deqn{\pi_1(\alpha \mid x) \propto L(\alpha \mid x) \pi_1(\alpha),}
+#' where \eqn{L(\alpha \mid x)} is the likelihood function and \eqn{\pi_1(\alpha)}
+#' is Jeffreys prior.
+#'
+#' This implementation relies on the Hurwitz zeta function, provided by the
+#' VGAM package, to accurately compute the required terms.
+#'
+#' @return A numeric value representing the posterior distribution evaluated
+#' at the given parameters and observed data.
+#'
+#' @references
+#' Jerez-Lillo, N., Rodrigues, F. A., Ferreira, P. H., & Ramos, P. L. (2025).
+#' Beyond the Power Law: Estimation, Goodness-of-Fit, and a Semiparametric
+#' Extension in Complex Networks. arXiv preprint arXiv:2311.11200. Available at:
+#' \url{https://arxiv.org/abs/2311.11200}
+#'
+#' @examples
+#' # Example data
+#' x <- c(1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 4, 4, 10)
+#'
+#' # Evaluating the posterior distribution for different parameter values
+#' post_pldis(2.0, 1, x)
+#' post_pldis(2.5, 1, x)
+#' post_pldis(2.5, 2, x)
+#' post_pldis(2.5, 2, x)
+#'
+#' @seealso [Jprior_pldis] [loglik_pldis]
+#'
+#' @export
+post_pldis <- function (alpha, xmin, x) {
+  post <- Jprior_pldis(alpha, xmin) + loglik_pldis(alpha, xmin, x)
+  return(post)
+}

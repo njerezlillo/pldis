@@ -1,0 +1,15 @@
+Package: pldis
+Title: Statistical Tools for Fitting the Discrete Power-Law Model
+Version: 1.0.0
+Authors@R: 
+    person("Nixon", "Jerez Lillo", , "njerezlillo@gmail.com", role = c("aut", "cre"),
+           comment = c(ORCID = "0000-0002-8750-969"))
+Description: This package provides a set of tools for fitting the discrete 
+             power-law model using both frequentist and Bayesian techniques.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.2
+Imports:
+  VGAM,
+  graphics
