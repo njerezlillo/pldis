@@ -13,3 +13,5 @@ RoxygenNote: 7.3.2
 Imports:
   VGAM,
   graphics
+URL: https://github.com/njerezlillo/pldis
+BugReports: https://github.com/njerezlillo/pldis/issues
