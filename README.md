@@ -7,7 +7,7 @@
 ![Lifecycle: experimental](https://img.shields.io/badge/Lifecycle-Experimental-orange)
 <!-- badges: end -->
 
-This package offers a collection of tools for fitting the discrete power-law model, utilizing both frequentist and Bayesian approaches for parameter estimation and model evaluation. The package includes:
+This package offers a collection of tools for fitting the discrete power-law model, utilizing both frequentist and Bayesian approaches for parameter estimation. The package includes:
 
 - Log-likelihood: Calculates the log-likelihood function for the discrete power-law model.
 - Jeffreys prior: Defines a non-informative prior for Bayesian estimation.
