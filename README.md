@@ -4,7 +4,7 @@
 <!-- badges: start -->
 [![R-CMD-check](https://github.com/njerezlillo/pldis/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/njerezlillo/pldis/actions/workflows/R-CMD-check.yaml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
-![Lifecycle: experimental](https://img.shields.io/badge/Lifecycle-ready for use-steelblue)
+![Lifecycle: experimental](https://img.shields.io/badge/Lifecycle-ready%20for%20use-steelblue)
 <!-- badges: end -->
 
 This package offers a collection of tools for fitting the discrete power-law model, utilizing a frequentist or Bayesian approach. The package includes:
