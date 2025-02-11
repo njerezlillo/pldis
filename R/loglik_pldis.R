@@ -6,9 +6,14 @@
 #' @param alpha A numeric value representing the scaling parameter \eqn{\alpha},
 #' which must be greater than 1.
 #' @param xmin A numeric value specifying the lower bound \eqn{x_{\min}}.
-#' @param x A numeric vector of observed data values.
+#' @param x A numerical vector of observed data.
 #'
-#' @details The computation relies on the Hurwitz zeta function from the
+#' @details
+#' The log-likelihood function of the discrete power-law model is given by:
+#' \deqn{\mathcal{L}(\alpha, x_{\min}) = -n\log\zeta(\alpha, x_{\min}) -
+#' \alpha\sum_{i=1}^{n}\log(x_i).}
+#'
+#' The computation relies on the Hurwitz zeta function from the
 #' VGAM package.
 #'
 #' @return A numeric value representing the log-likelihood of the data
@@ -21,7 +26,7 @@
 #' # Evaluating the log-likelihood for different parameter values
 #' loglik_pldis(2.0, 1, x)
 #' loglik_pldis(2.5, 1, x)
-#' loglik_pldis(2.5, 2, x)
+#' loglik_pldis(2.0, 2, x)
 #' loglik_pldis(2.5, 2, x)
 #'
 #' @importFrom VGAM zeta

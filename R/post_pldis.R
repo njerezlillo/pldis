@@ -6,10 +6,10 @@
 #' @param alpha A numeric value representing the scaling parameter \eqn{\alpha},
 #' which must be greater than 1.
 #' @param xmin A numeric value specifying the lower bound \eqn{x_{\min}}.
-#' @param x A numeric vector of observed data values.
+#' @param x A numerical vector of observed data.
 #'
 #' @details
-#' The posterior distribution is obtained by combining the likelihood function
+#' This posterior distribution is obtained by combining the likelihood function
 #' of the discrete power-law model with Jeffreys prior for \eqn{\alpha}.
 #' Given a dataset \eqn{x} and a scaling parameter \eqn{\alpha}, the posterior
 #' is proportional to:
@@ -36,7 +36,7 @@
 #' # Evaluating the posterior distribution for different parameter values
 #' post_pldis(2.0, 1, x)
 #' post_pldis(2.5, 1, x)
-#' post_pldis(2.5, 2, x)
+#' post_pldis(2.0, 2, x)
 #' post_pldis(2.5, 2, x)
 #'
 #' @seealso [Jprior_pldis] [loglik_pldis]

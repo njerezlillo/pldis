@@ -1,39 +1,36 @@
 #' Fitting the Discrete Power-Law Model
 #'
 #' Estimates the parameters of a discrete power-law model, including the lower
-#' bound \eqn{x_{\min}} and the scaling parameter \eqn{\alpha}, using both
-#' frequentist and Bayesian approaches.
+#' bound \eqn{x_{\min}} and the scaling parameter \eqn{\alpha}, using a
+#' frequentist or Bayesian approach.
 #'
-#' @param x A numeric vector of observed data values.
+#' @param x A numerical vector of observed data.
 #' @param xm A numeric value specifying the lower bound \eqn{x_{\min}}.
-#' The default is NULL. If not specified, the function will automatically
+#' The default is `NULL`. If not specified, the function will automatically
 #' estimate \eqn{x_{\min}} from the data.
 #' @param bayesian A logical value indicating whether to use a Bayesian approach
-#' to estimate \eqn{x_{\min}}. If `TRUE`, the function employs Bayesian estimation
+#' to estimate \eqn{x_{\min}}. The default is `TRUE`. If `TRUE`, the function employs Bayesian estimation
 #' to refine the maximum likelihood estimate. If `FALSE`, the frequentist method is used.
 #'
 #' @details
-#' This function estimates the lower bound \eqn{x_{\min}} of a discrete power-law
-#' model using the Kolmogorov-Smirnov (KS) statistic, defined by:
-#' \deqn{K = \max |F_n(x)-F(x; \hat{\boldsymbol{\theta}})|.}
+#' This function estimates the parameters of a discrete power-law model in
+#' two steps:
 #'
-#' The KS statistic compares the empirical cumulative distribution function
-#' of the observed data with the theoretical cumulative distribution function
-#' of the discrete power-law model.
+#' First, the lower bound \eqn{x_{\min}} is estimated using the Kolmogorov-Smirnov
+#' (KS) statistic, defined as:
+#' \deqn{K = \max |F_n(x) - F(x; \hat{\boldsymbol{\theta}})|.}
 #'
-#' This approach aims to find the value of \eqn{x_{\min}} that makes the
-#' distribution of the data and the power-law model fit as closely as possible.
-#' In other words, it chooses \eqn{x_{\min}} so that the cumulative distribution
-#' function of the observed data, restricted to values greater than or equal to
-#' \eqn{x_{\min}}, is as similar as possible to the CDF of the power-law model
-#' fitted to the same range of data (see Clauset et. al. 2007 for details).
+#' This method identifies the value of \eqn{x_{\min}} that best aligns the
+#' empirical data distribution with the power-law model. Specifically, it selects
+#' \eqn{x_{\min}} such that the cumulative distribution function (CDF) of the
+#' observed data, restricted to values \eqn{x \geq x_{\min}}, closely matches the
+#' CDF of the fitted power-law model over the same range (see Clauset et al., 2007
+#' for details).
 #'
-#' When `bayesian = TRUE`, a Bayesian framework is applied to estimate both
-#' \eqn{x_{\min}} and the scaling parameter \eqn{\alpha}.
+#' Second, the scaling parameter \eqn{\alpha} is estimated.
 #'
 #' @return
-#' - `fit_xmin_pldis()`: Returns a list containing the estimated lower bound
-#'   of the discrete power-law model based on the data.
+#' - `fit_xmin_pldis()`: Returns the estimated lower bound based on the data.
 #' - `fit_pldis()`: Returns a list containing both estimated parameters.
 #'
 #' @references
@@ -46,13 +43,13 @@
 #' # Example data
 #' x <- c(1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 4, 4, 10)
 #'
-#' # Estimation of xmin using the fit_xmin_pldis function:
+#' # Estimation of xmin:
 #' # First, we estimate xmin using the frequentist approach (bayesian = F)
 #' fit_xmin_pldis(x, bayesian = FALSE)
 #' # Then, we estimate xmin using the Bayesian approach (bayesian = T)
 #' fit_xmin_pldis(x, bayesian = TRUE)
 #'
-#' # Estimation of the full discrete power-law model parameters using fit_pldis:
+#' # Estimation of the full discrete power-law model parameters:
 #' # First, we fix xmin to 1 and use the frequentist approach to estimate
 #' # alpha (bayesian = F)
 #' fit_pldis(x, xm = 1, bayesian = FALSE)
@@ -60,7 +57,7 @@
 #' # both alpha and xmin (bayesian = T)
 #' fit_pldis(x, xm = 1, bayesian = TRUE)
 #'
-#' # If no xmin value is provided, the function will automatically estimate xmin:
+#' # If no xmin value is provided, the function automatically estimates it:
 #' # Estimation of the full discrete power-law model with the frequentist approach
 #' fit_pldis(x, bayesian = FALSE)
 #' # Estimation with the Bayesian approach
@@ -68,11 +65,10 @@
 #'
 #' @seealso [post_pldis] [loglik_pldis]
 #'
-#'
 #' @importFrom graphics hist
 #'
 #' @export
-fit_xmin_pldis <- function (x, bayesian = T) {
+fit_xmin_pldis <- function (x, bayesian = TRUE) {
   xmins <- sort(unique(x))
   xmins <- xmins[-length(xmins)]
 
@@ -120,7 +116,7 @@ fit_xmin_pldis <- function (x, bayesian = T) {
 
 #' @rdname fit_xmin_pldis
 #' @export
-fit_pldis <- function (x, xm = NULL, bayesian = T) {
+fit_pldis <- function (x, xm = NULL, bayesian = TRUE) {
   if (is.null(xm)) xm <- fit_xmin_pldis(x, bayesian)
   alphas <- seq(1.1, 6.5, .01)
 

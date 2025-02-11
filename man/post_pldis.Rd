@@ -12,7 +12,7 @@ which must be greater than 1.}
 
 \item{xmin}{A numeric value specifying the lower bound \eqn{x_{\min}}.}
 
-\item{x}{A numeric vector of observed data values.}
+\item{x}{A numerical vector of observed data.}
 }
 \value{
 A numeric value representing the posterior distribution evaluated
@@ -23,7 +23,7 @@ Computes the posterior distribution for a discrete power-law model
 using Jeffreys prior as the noninformative prior.
 }
 \details{
-The posterior distribution is obtained by combining the likelihood function
+This posterior distribution is obtained by combining the likelihood function
 of the discrete power-law model with Jeffreys prior for \eqn{\alpha}.
 Given a dataset \eqn{x} and a scaling parameter \eqn{\alpha}, the posterior
 is proportional to:
@@ -41,7 +41,7 @@ x <- c(1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 4, 4, 10)
 # Evaluating the posterior distribution for different parameter values
 post_pldis(2.0, 1, x)
 post_pldis(2.5, 1, x)
-post_pldis(2.5, 2, x)
+post_pldis(2.0, 2, x)
 post_pldis(2.5, 2, x)
 
 }

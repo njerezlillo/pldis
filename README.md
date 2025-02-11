@@ -22,7 +22,7 @@ This package offers a collection of tools for fitting the discrete power-law mod
 - [x] Write examples for each function in the package
 - [x] Check the documentation
 - [x] Publish on GitHub  
-- [ ] Complete the "Example" section on GitHub
+- [x] Complete the "Example" section on GitHub
 - [ ] Distribute on CRAN
 
 ## Installation

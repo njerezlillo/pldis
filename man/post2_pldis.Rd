@@ -12,7 +12,7 @@ which must be greater than 1.}
 
 \item{xmin}{A numeric value specifying the lower bound \eqn{x_{\min}}.}
 
-\item{x}{A numeric vector of observed data values.}
+\item{x}{A numerical vector of observed data.}
 }
 \value{
 A numeric value representing the alternative posterior distribution
@@ -42,7 +42,7 @@ x <- c(1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 4, 4, 10)
 # Evaluating the 2nd posterior distribution for different parameter values
 post2_pldis(2.0, 1, x)
 post2_pldis(2.5, 1, x)
-post2_pldis(2.5, 2, x)
+post2_pldis(2.0, 2, x)
 post2_pldis(2.5, 2, x)
 
 }

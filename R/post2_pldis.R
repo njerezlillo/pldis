@@ -6,7 +6,7 @@
 #' @param alpha A numeric value representing the scaling parameter \eqn{\alpha},
 #' which must be greater than 1.
 #' @param xmin A numeric value specifying the lower bound \eqn{x_{\min}}.
-#' @param x A numeric vector of observed data values.
+#' @param x A numerical vector of observed data.
 #'
 #' @details
 #' This posterior distribution is obtained by combining the likelihood function
@@ -37,7 +37,7 @@
 #' # Evaluating the 2nd posterior distribution for different parameter values
 #' post2_pldis(2.0, 1, x)
 #' post2_pldis(2.5, 1, x)
-#' post2_pldis(2.5, 2, x)
+#' post2_pldis(2.0, 2, x)
 #' post2_pldis(2.5, 2, x)
 #'
 #' @seealso [loglik_pldis]
