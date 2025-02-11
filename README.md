@@ -7,7 +7,7 @@
 ![Lifecycle: experimental](https://img.shields.io/badge/Lifecycle-Experimental-orange)
 <!-- badges: end -->
 
-This package offers a collection of tools for fitting the discrete power-law model, utilizing both frequentist and Bayesian approaches for parameter estimation. The package includes:
+This package offers a collection of tools for fitting the discrete power-law model, utilizing a frequentist or Bayesian approach. The package includes:
 
 - Log-likelihood: Calculates the log-likelihood function for the discrete power-law model.
 - Jeffreys prior: Defines a non-informative prior for Bayesian estimation.
@@ -53,7 +53,7 @@ fit_pldis(x, xm = 1, bayesian = FALSE)
 fit_pldis(x, xm = 1, bayesian = TRUE)
 ```
 
-In many contexts, the power-law model does not apply to the entire dataset but rather holds from a certain lower bound onward. Therefore, we aim to determine the threshold that ensures the best fit between the observed data and the power-law model. Specifically, this threshold is chosen so that the cumulative distribution function of the observed data is as similar as possible to the cumulative distribution function of the fitted power-law model. This alignment is assessed using the Kolmogorov-Smirnov statistic  (see Clauset *et. al.* 2009 for details).
+In many contexts, the power-law model does not apply to the entire dataset, but rather holds starting from a certain lower bound. Therefore, we aim to determine the threshold that ensures the best fit between the observed data and the power-law model. Specifically, this threshold is chosen so that the cumulative distribution function of the observed data is as similar as possible to the cumulative distribution function of the fitted power-law model. This alignment is assessed using the Kolmogorov-Smirnov statistic  (see Clauset *et. al.* 2009 for details).
 
 <p align="center">
   <img src="KS.png" alt="">
