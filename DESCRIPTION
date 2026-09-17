@@ -1,0 +1,20 @@
+Package: pldis
+Title: Statistical Tools for Fitting Discrete Power-Law Models
+Version: 1.0.0
+Authors@R: 
+    person("Nixon", "Jerez Lillo", , "njerezlillo@gmail.com", role = c("aut", "cre"),
+           comment = c(ORCID = "0000-0002-8750-969"))
+Description: This package provides a set of tools for fitting the discrete 
+             power-law model using the ordinary maximum likelihood estimator
+             or a Fisher-penalized maximum likelihood estimator (Firth-type
+             bias reduction).
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+Imports:
+  VGAM,
+  graphics,
+  numDeriv
+URL: https://github.com/njerezlillo/pldis
+BugReports: https://github.com/njerezlillo/pldis/issues
+Config/roxygen2/version: 8.0.0
